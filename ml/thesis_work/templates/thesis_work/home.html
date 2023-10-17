@@ -1,0 +1,41 @@
+{% extends 'thesis_work/_base.html' %}
+{% block title %} | Home{% endblock title %}
+{% block content %}
+    <div class="landing">
+                <div id="particles-js">
+                    <div class="hero-content">
+                        <h1>
+                            Machine Learning in <br> Medical Diagnosis
+                        </h1>
+                        <p>
+                            Prototype for Diabetes Prediction and Diabetic <br> Kideny Disease Prediction ( DKD )
+                        </p>
+                        <button id="myButton1">
+                            Early Diabetes
+                        </button>
+                        <button id="myButton2">
+                            Diabetic Kidney Disease
+                        </button>
+
+
+                    </div>
+                    <div class="hero-image"> </div>
+                </div>
+            </div>
+
+    <script type="text/javascript">
+        document.getElementById("myButton1").onclick = function () {
+           location.href = "{% url 'ed' %}";
+        };
+
+        document.getElementById("myButton2").onclick = function () {
+           location.href = "{% url 'dkd' %}";
+        };
+    </script>
+
+
+{#    <div class="container">#}
+{#        <a class="btn btn-primary" href="{% url 'ed' %}">Early DM</a>#}
+{#        <a class="btn btn-primary" href="{% url 'dkd' %}">DKD</a>#}
+{#    </div>#}
+{% endblock %}

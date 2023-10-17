@@ -1,0 +1,31 @@
+{% extends 'thesis_work/_base2.html' %}
+{% block title %} | Result ED{% endblock title %}
+{% block content %}
+    <div class="container text-center justify content center">
+        {% if predicted_result.cat_pred_user_input == 1 %}
+            <h2>Positive</h2>
+            <img src="../../static/images/Positive.png" class="rounded mx-auto d-block" alt="...">
+        {% else %}
+            <h2>Negative</h2>
+            <img src="../../static/images/neg.png" class="rounded mx-auto d-block" alt="...">
+        {% endif %}
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>accuracy of the model:</td>
+              <td>{{ predicted_result.accurary }}</td>
+            </tr>
+            <tr>
+              <td>predicted_result:</td>
+              <td>{{ predicted_result.cat_pred_user_input }}</td>
+            </tr>
+          <tr>
+              <td style="color: #9C1A1C"> Awareness :</td>
+              <td>The Result is not 100% Satisfactory as The Development still in trial. You may seek medical consultation to a Doctor based on this "RESULT"</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+{#    <p>accuracy of the model: {{ predicted_result.accurary }}</p>#}
+{#    <p>predicted_result: {{ predicted_result.cat_pred_user_input }}</p>#}
+{% endblock content %}
